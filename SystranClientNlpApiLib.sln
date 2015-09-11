@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystranClientNlpApiLib", "SystranClientNlpApiLib\SystranClientNlpApiLib.csproj", "{8A1916F1-CC61-4EC8-9FF9-BD846BAE1B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystranClientNlpApiLibTests", "SystranClientNlpApiLibTests\SystranClientNlpApiLibTests.csproj", "{CAED138B-6418-4D73-9D78-C80542C71BDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A1916F1-CC61-4EC8-9FF9-BD846BAE1B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1916F1-CC61-4EC8-9FF9-BD846BAE1B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1916F1-CC61-4EC8-9FF9-BD846BAE1B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1916F1-CC61-4EC8-9FF9-BD846BAE1B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAED138B-6418-4D73-9D78-C80542C71BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAED138B-6418-4D73-9D78-C80542C71BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAED138B-6418-4D73-9D78-C80542C71BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAED138B-6418-4D73-9D78-C80542C71BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
