@@ -19,10 +19,10 @@ namespace Systran.NlpClientLib.Api.Tests
         [ClassInitialize()]
         public static void ClassInit(TestContext context)
         {
-            client = new ApiClient("https://platformapi-stag.systran.net:8904");
+            client = new ApiClient("PLATFORM_URL_HERE");
             Configuration.apiClient = client;
             Dictionary<String, String> keys = new Dictionary<String, String>();
-            keys.Add("key", "a72c2f99-5841-4259-88a6-f75f9860f992");
+            keys.Add("key", "API_KEY_HERE");
             Configuration.apiKey = keys;
             segmentationApi = new SegmentationApi(Configuration.apiClient);
         }
