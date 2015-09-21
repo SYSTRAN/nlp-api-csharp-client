@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Systran.NlpClientLib.Client;
 using Systran.NlpClientLib.Model;
+using System.IO;
 
 namespace Systran.NlpClientLib.Api.Tests
 {
@@ -20,11 +21,15 @@ namespace Systran.NlpClientLib.Api.Tests
         [ClassInitialize()]
         public static void ClassInit(TestContext context)
         {
-            client = new ApiClient("PLATFORM_URL_HERE");
+            client = new ApiClient("https://platform.systran.net:8904");
             Configuration.apiClient = client;
             Dictionary<String, String> keys = new Dictionary<String, String>();
-            keys.Add("key", "API_KEY_HERE");
-            Configuration.apiKey = keys;
+            string key;
+            using (StreamReader streamReader = new StreamReader("../../key.txt", Encoding.UTF8))
+            {
+                key = streamReader.ReadToEnd();
+            }
+            keys.Add("key", key); Configuration.apiKey = keys;
             lidApi = new LidApi(Configuration.apiClient);
         }
 
@@ -55,7 +60,7 @@ namespace Systran.NlpClientLib.Api.Tests
         [TestMethod()]
         public void NlpLidDetectLanguageParagraphGetTest()
         {
-          LidParagraphResponse lidParagraphResponse = lidApi.NlpLidDetectLanguageParagraphGet("This is a test", null, null);
+          LidParagraphResponse lidParagraphResponse = lidApi.NlpLidDetectLanguageParagraphGet(null, "This is a test", null);
           Assert.IsNotNull(lidParagraphResponse);
         }
 
@@ -65,7 +70,7 @@ namespace Systran.NlpClientLib.Api.Tests
             LidParagraphResponse lidParagraphResponse = new LidParagraphResponse();
             Task.Run(async () =>
             {
-               lidParagraphResponse = await lidApi.NlpLidDetectLanguageParagraphGetAsync("This is a test", null, null);
+               lidParagraphResponse = await lidApi.NlpLidDetectLanguageParagraphGetAsync("../../test.txt", null, null);
             }).Wait();
             Assert.IsNotNull(lidParagraphResponse);
         }

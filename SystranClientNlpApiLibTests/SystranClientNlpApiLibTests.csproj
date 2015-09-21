@@ -64,6 +64,14 @@
       <Name>SystranClientNlpApiLib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="key.txt">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="test.txt">
+      <SubType>Component</SubType>
+    </Content>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

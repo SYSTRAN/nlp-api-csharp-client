@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Systran.NlpClientLib.Client;
+using System.IO;
 
 namespace Systran.NlpClientLib.Api.Tests
 {
@@ -21,10 +22,15 @@ namespace Systran.NlpClientLib.Api.Tests
         [ClassInitialize()]
         public static void ClassInit(TestContext context)
         {
-            client = new ApiClient("PLATFORM_URL_HERE");
+            client = new ApiClient("https://platform.systran.net:8904");
             Configuration.apiClient = client;
             Dictionary<String, String> keys = new Dictionary<String, String>();
-            keys.Add("key", "API_KEY_HERE");
+            string key;
+            using (StreamReader streamReader = new StreamReader("../../key.txt", Encoding.UTF8))
+            {
+                key = streamReader.ReadToEnd();
+            }
+            keys.Add("key", key);
             Configuration.apiKey = keys;
             nerApi = new NerApi(Configuration.apiClient);
         }
@@ -39,7 +45,7 @@ namespace Systran.NlpClientLib.Api.Tests
         public void NlpNerExtractAnnotationsGetTest()
         {
             NerExtractAnnotationsResponse nerExtractAnnotationsResponse = new NerExtractAnnotationsResponse();
-            nerExtractAnnotationsResponse = nerApi.NlpNerExtractAnnotationsGet("this is a test", null, "en", null, null);
+            nerExtractAnnotationsResponse = nerApi.NlpNerExtractAnnotationsGet(null, "This is a test", "en", null, null);
             Assert.IsNotNull(nerExtractAnnotationsResponse.Annotations);
         }
 
@@ -49,7 +55,7 @@ namespace Systran.NlpClientLib.Api.Tests
             NerExtractAnnotationsResponse nerExtractAnnotationsResponse = new NerExtractAnnotationsResponse();
             Task.Run(async () =>
             {
-                nerExtractAnnotationsResponse = await nerApi.NlpNerExtractAnnotationsGetAsync("this is a test", null, "en", null, null);
+                nerExtractAnnotationsResponse = await nerApi.NlpNerExtractAnnotationsGetAsync("../../test.txt", null, "en", null, null);
             }).Wait();
             Assert.IsNotNull(nerExtractAnnotationsResponse.Annotations);
         }
@@ -58,7 +64,7 @@ namespace Systran.NlpClientLib.Api.Tests
         public void NlpNerExtractEntitiesGetTest()
         {
             NerExtractEntitiesResponse nerExtractEntitiesResponse = new NerExtractEntitiesResponse();
-            nerExtractEntitiesResponse = nerApi.NlpNerExtractEntitiesGet("This is a test", null, "en", null, null);
+            nerExtractEntitiesResponse = nerApi.NlpNerExtractEntitiesGet("test.txt", null, "en", null, null);
             Assert.IsNotNull(nerExtractEntitiesResponse.Entities);
         }
 
@@ -68,7 +74,7 @@ namespace Systran.NlpClientLib.Api.Tests
             NerExtractEntitiesResponse nerExtractEntitiesResponse = new NerExtractEntitiesResponse();
             Task.Run(async () =>
             {
-                nerExtractEntitiesResponse = await nerApi.NlpNerExtractEntitiesGetAsync("This is a test", null, "en", null, null);
+                nerExtractEntitiesResponse = await nerApi.NlpNerExtractEntitiesGetAsync(null, "This is a test", "en", null, null);
             }).Wait();
             Assert.IsNotNull(nerExtractEntitiesResponse.Entities);
         }

@@ -213,7 +213,7 @@ namespace Systran.NlpClientLib.Api {
       if (((int)response.StatusCode) >= 400) {
         throw new ApiException ((int)response.StatusCode, "Error calling NlpTranscriptionTranscribeGet: " + response.Content, response.Content);
       }
-      return (string) apiClient.Deserialize(response.Content, typeof(string));
+      return (string) response.Content;
     }
 	
 	 /// <summary>
@@ -260,7 +260,7 @@ namespace Systran.NlpClientLib.Api {
       if (((int)response.StatusCode) >= 400) {
         throw new ApiException ((int)response.StatusCode, "Error calling NlpTranscriptionTranscribeGet: " + response.Content, response.Content);
       }
-      return (string) apiClient.Deserialize(response.Content, typeof(string));
+      return (string) response.Content;
     }
     
   }  
