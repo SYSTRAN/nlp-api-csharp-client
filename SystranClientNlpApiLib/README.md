@@ -1,4 +1,4 @@
-﻿Systran Geographic .Net Client Library.
+﻿Systran Natural Language Processing .Net Client Library.
 ===================
 This is a .Net implementation of the Systran Natural Language Processing Client Library.
 
