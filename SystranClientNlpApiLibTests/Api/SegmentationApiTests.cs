@@ -24,7 +24,7 @@ namespace Systran.NlpClientLib.Api.Tests
             Configuration.apiClient = client;
             Dictionary<String, String> keys = new Dictionary<String, String>();
             string key;
-            using (StreamReader streamReader = new StreamReader("../../key.txt", Encoding.UTF8))
+            using (StreamReader streamReader = new StreamReader("../../apiKey.txt", Encoding.UTF8))
             {
                 key = streamReader.ReadToEnd();
             }

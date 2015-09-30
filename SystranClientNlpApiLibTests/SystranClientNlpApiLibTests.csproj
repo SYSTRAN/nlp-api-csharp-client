@@ -65,7 +65,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="key.txt">
+    <Content Include="apiKey.txt">
       <SubType>Component</SubType>
     </Content>
     <Content Include="test.txt">

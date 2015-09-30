@@ -6,4 +6,4 @@ This is a .Net implementation of the Systran Natural Language Processing Client 
 Opening in Visual Studio 
 -------------
 
-From Visual Studio, open SystranClientNlpApiLib.csproj
+From Visual Studio, open SystranClientNlpApiLib.sln
