@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystranClientNlpApiLib", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystranClientNlpApiLibTests", "SystranClientNlpApiLibTests\SystranClientNlpApiLibTests.csproj", "{CAED138B-6418-4D73-9D78-C80542C71BDC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{79A7FE2E-DEAA-4A95-AD77-B7BE997FB6D3}"
-	ProjectSection(SolutionItems) = preProject
-		SystranClientNlpApiLib\README.md = SystranClientNlpApiLib\README.md
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
