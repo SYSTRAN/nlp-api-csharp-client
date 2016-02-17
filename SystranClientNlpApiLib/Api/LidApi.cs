@@ -199,7 +199,7 @@ namespace Systran.NlpClientLib.Api {
       String[] authSettings = new String[] { "accessToken", "apiKey" };
 
       // make the HTTP request
-      IRestResponse response = (IRestResponse) apiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+      IRestResponse response = (IRestResponse) apiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
 
       if (((int)response.StatusCode) >= 400) {
         throw new ApiException ((int)response.StatusCode, "Error calling NlpLidDetectLanguageParagraphGet: " + response.Content, response.Content);
@@ -238,7 +238,7 @@ namespace Systran.NlpClientLib.Api {
       String[] authSettings = new String[] { "accessToken", "apiKey" };
 
       // make the HTTP request
-      IRestResponse response = (IRestResponse) await apiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+      IRestResponse response = (IRestResponse) await apiClient.CallApiAsync(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
       if (((int)response.StatusCode) >= 400) {
         throw new ApiException ((int)response.StatusCode, "Error calling NlpLidDetectLanguageParagraphGet: " + response.Content, response.Content);
       }
